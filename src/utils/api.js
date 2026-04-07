@@ -18,7 +18,7 @@ const request = async (path, options = {}) => {
     return data;
   } catch (err) {
     if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
-      throw new Error('Cannot connect to server. Make sure the backend is running on port 5000.');
+      throw new Error('Cannot connect to server. The backend may be waking up, please try again in a moment.');
     }
     throw err;
   }
